@@ -1,0 +1,16 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
+
+# githubusercontent
+/[-a-z0-9]+\.githubusercontent\.com/[-a-zA-Z0-9?&=_\/.]*
+
+"node_id": "[-a-zA-Z=;:/0-9+]*"
+content: "[-a-zA-Z=;:/0-9+]*="
+
+# sha-... -- uses a fancy capture
+(['"]|&quot;)[0-9a-f]{40,}\g{-1}
+
+# URL escaped characters
+\%[0-9A-F]{2}
+
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b
